@@ -66,7 +66,8 @@ app.get("/questions/:questionID", (req, res) => {
 });
 
 app.get("/get-question-by-id/:id", (req, res) => {
-  const id = req.query.id;
+  const id = req.params.id;
+  console.log("baaaaa", id);
 
   fs.readFile("data.json", { encoding: "utf-8" }, (error, data) => {
     if (error) {
@@ -75,14 +76,15 @@ app.get("/get-question-by-id/:id", (req, res) => {
         message: error.message,
       });
     } else {
+      // console.log("dxcxczxc", data);
       const questions = JSON.parse(data);
-      console.log("questions", questions);
+      // console.log("questions", questions);
       let selectedQuestion;
       for (const item of questions) {
-        console.log(item.id);
+        console.log(questions);
         if (item.id === Number(id)) {
           selectedQuestion = item;
-          console.log("selectedQuestion", selectedQuestion);
+          // console.log("selectedQuestion", selectedQuestion);
           break;
         }
       }

@@ -25,7 +25,7 @@ window.onload = () => {
         .then((data) => {
           // handle response data
           window.location.href = `/questions/${data.data.id}`;
-          console.log("data: ", data);
+          // console.log("data: ", data);
         })
         .catch((err) => {
           console.log(err);
