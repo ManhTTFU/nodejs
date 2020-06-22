@@ -10,12 +10,12 @@ window.onload = () => {
     },
   })
     .then((response) => {
-      console.log("res", response);
+      // console.log("res", response);
       return response.json();
     })
     .then((data) => {
       // calculate like/dislike
-      console.log("fixed-data", data);
+      // console.log("fixed-data", data);
       let likePercent = 0;
       let dislikePercent = 0;
       if (data.data.like === 0 && data.data.dislike === 0) {
@@ -36,6 +36,11 @@ window.onload = () => {
       document.querySelector(
         ".dislike-percent"
       ).innerHTML = `${dislikePercent}%`;
+      document
+        .querySelector(".other-question")
+        .addEventListener("click", () => {
+          window.location.href = "/";
+        });
     })
     .catch((error) => {
       console.log(error);

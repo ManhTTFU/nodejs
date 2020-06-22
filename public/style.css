@@ -1,0 +1,24 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.total-vote {
+  text-align: center;
+}
+
+.vote-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-container {
+  text-align: center;
+}
